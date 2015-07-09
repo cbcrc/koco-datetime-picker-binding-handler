@@ -164,7 +164,7 @@ define(['knockout', 'jquery', 'moment-timezone', 'bootstrap-datetimepicker'],
                 }
 
                 if (pickerOptions.timezone) {
-                    newDate.tz(timezone);
+                    newDate.tz(pickerOptions.timezone);
                 }
 
                 if (!newDate.isSame(currentDate)) {
