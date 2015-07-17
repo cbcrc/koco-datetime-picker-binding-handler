@@ -22,13 +22,13 @@ var require = {
 paths: {
 ...
 'bootstrap-datetimepicker': 'bower_components/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker',
-'moment-timezone': 'bower_components/moment-timezone/moment-timezone'
+'moment-timezone': 'bower_components/moment-timezone/builds/moment-timezone-with-data'
 ...
 ```
 
 ##Usage 
 ```html
-<input data-bind="datetimePicker: date [, options...]">
+<input data-bind="datetimePicker: date [, datetimePickerOptions: options...]">
 ```
 Note that the data-binding _must_ appear on an `input` element. 
 ###Options

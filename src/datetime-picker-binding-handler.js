@@ -58,7 +58,7 @@ define(['knockout', 'jquery', 'moment-timezone', 'bootstrap-datetimepicker'],
                 if (!allBindings.get('pickTime') || allBindings.get('isDisplayedInMontrealTimeZone')) {
                     defaultSettings.timezone = 'America/Montreal';
                 } 
-                var pickerOptions = $.extend({}, defaultSettings, ko.toJS(allBindings()));
+                var pickerOptions = $.extend({}, defaultSettings, ko.toJS(allBindings().datetimePickerOptions));
                 // if the user can't pick the time, default to midnight
                 if (!pickerOptions.pickTime) {
                     pickerOptions.defaultTimeMode = 'midnight';
