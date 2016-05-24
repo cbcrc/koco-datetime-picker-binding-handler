@@ -1,0 +1,23 @@
+{
+    "name": "koco-datetime-picker-binding-handler",
+    "version": "0.1.1",
+    "homepage": "https://github.com/cbcrc/koco-datetime-picker-binding-handler",
+    "authors": [
+        "Mark Moyes <mark.moyes@cbc.ca>"
+    ],
+    "description": "Knockout components binding handler for Bootstrap 3 Datepicker",
+    "main": "src/datetime-binding-handler.js",
+    "keywords": [
+        "koco",
+        "knockout",
+        "datetime-picker"
+    ],
+    "scripts": {
+        "build": "rm -rf dist && mkdir dist && cp -r src/* dist && rm -rf dist/*.js && babel src --out-dir dist --modules umd --presets es2015,stage-0"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "eonasdan-bootstrap-datetimepicker": "~4.14.30",
+        "moment-timezone": "~0.4.0"
+    }
+}

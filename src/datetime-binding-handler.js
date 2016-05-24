@@ -1,28 +1,28 @@
 // Copyright (c) CBC/Radio-Canada. All rights reserved.
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
-define(['knockout', 'jquery', 'moment'],
-    function(ko, $, moment) {
-        'use strict';
+import ko from 'knockout';
+import $ from 'jquery';
+import moment from 'moment';
 
-        ko.bindingHandlers.datetime = {
-            update: function(element, valueAccessor, allBindingsAccessor/*, viewModel*/) {
-                var valueUnwrapped = ko.unwrap(valueAccessor());
 
-                if (!valueUnwrapped) {
-                    return;
-                }
+ko.bindingHandlers.datetime = {
+    update: function(element, valueAccessor, allBindingsAccessor /*, viewModel*/ ) {
+        var valueUnwrapped = ko.unwrap(valueAccessor());
 
-                var datetime = moment.utc(valueUnwrapped).local();
-                var $element = $(element);
-                var allBindings = allBindingsAccessor();
-                var pattern = allBindings.datePattern || 'YYYY-MM-DD H:mm';
+        if (!valueUnwrapped) {
+            return;
+        }
 
-                $element.text(datetime.format(pattern));
+        var datetime = moment.utc(valueUnwrapped).local();
+        var $element = $(element);
+        var allBindings = allBindingsAccessor();
+        var pattern = allBindings.datePattern || 'YYYY-MM-DD H:mm';
 
-                if ($element.is('time')) {
-                    $element.attr('datetime', datetime.toISOString());
-                }
-            }
-        };
-    });
+        $element.text(datetime.format(pattern));
+
+        if ($element.is('time')) {
+            $element.attr('datetime', datetime.toISOString());
+        }
+    }
+};
